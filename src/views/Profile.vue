@@ -38,7 +38,7 @@ export default {
     edit() {
       if (!this.active) {
         axios
-          .put("https://enigmatic-tundra-75670.herokuapp.com/api/user", {
+          .put("https://secure-lake-25088.herokuapp.com/api/user", {
             email: this.$store.state.user.email,
             profile: this.profile,
           })

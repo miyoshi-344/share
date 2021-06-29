@@ -29,14 +29,14 @@ export default new Vuex.Store({
   actions: {
     async login({ commit }, { email, password }) {
       const responseLogin = await axios.post(
-        "https://enigmatic-tundra-75670.herokuapp.com/api/login",
+        "https://secure-lake-25088.herokuapp.com/api/login",
         {
           email: email,
           password: password,
         }
       );
       const responseUser = await axios.get(
-        "https://enigmatic-tundra-75670.herokuapp.com/api/user",
+        "https://secure-lake-25088.herokuapp.com/api/user",
         {
           params: {
             email: email,
@@ -49,7 +49,7 @@ export default new Vuex.Store({
     },
     logout({ commit }) {
       axios
-        .post("https://enigmatic-tundra-75670.herokuapp.com/api/logout", {
+        .post("https://secure-lake-25088.herokuapp.com/api/logout", {
           auth: this.state.auth,
         })
         .then((response) => {

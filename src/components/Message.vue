@@ -53,7 +53,7 @@ export default {
           if (element.user_id == this.$store.state.user.id) {
             axios({
               method: "delete",
-              url: "https://enigmatic-tundra-75670.herokuapp.com/api/like",
+              url: "https://secure-lake-25088.herokuapp.com/api/like",
               data: {
                 share_id: this.shares[index].item.id,
                 user_id: this.$store.state.user.id,
@@ -69,7 +69,7 @@ export default {
         });
       } else {
         axios
-          .post("https://enigmatic-tundra-75670.herokuapp.com/api/like", {
+          .post("https://secure-lake-25088.herokuapp.com/api/like", {
             share_id: this.shares[index].item.id,
             user_id: this.$store.state.user.id,
           })
@@ -85,7 +85,7 @@ export default {
     del(index) {
       axios
         .delete(
-          "https://enigmatic-tundra-75670.herokuapp.com/api/shares/" +
+          "https://secure-lake-25088.herokuapp.com/api/shares/" +
             this.shares[index].item.id
         )
         .then((response) => {
@@ -99,12 +99,12 @@ export default {
     async getShares() {
       let data = [];
       const shares = await axios.get(
-        "https://enigmatic-tundra-75670.herokuapp.com/api/shares"
+        "https://secure-lake-25088.herokuapp.com/api/shares"
       );
       for (let i = 0; i < shares.data.data.length; i++) {
         await axios
           .get(
-            "https://enigmatic-tundra-75670.herokuapp.com/api/shares/" +
+            "https://secure-lake-25088.herokuapp.com/api/shares/" +
               shares.data.data[i].id
           )
           .then((response) => {
